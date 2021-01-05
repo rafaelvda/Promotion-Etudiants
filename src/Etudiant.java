@@ -3,16 +3,10 @@ public class Etudiant {
     private String nom, dateNaissance;
     private double moyenne;
 
-    //public Etudiant(String nom, String dateNaissance, double moyenne) {
-     //   this.nom = nom;
-     //   this.dateNaissance = dateNaissance;
-    //    this.moyenne = moyenne;
-   // }
-
-    public Etudiant() {
-        nom = Saisie.lire_String("Entrez un nom d'étudiant :");
-        dateNaissance = Saisie.lire_String("Entrez la date de naissance :");
-        moyenne = Saisie.lire_double("Entrez la moyenne :");
+    public Etudiant(String nom, String dateNaissance, double moyenne) {
+        this.nom = nom;
+        this.dateNaissance = dateNaissance;
+        this.moyenne = moyenne;
     }
 
     public String getNom() {
@@ -39,13 +33,19 @@ public class Etudiant {
         this.moyenne = moyenne;
     }
 
-    public void modifierMoyenne() {
-        double note = Saisie.lire_double("Quel est la moyenne de cette étudiant :");
-        moyenne = note;
+    public void saisirEtudiant() {
+        nom = Saisie.lire_String("Entrez un nom d'étudiant :");
+        dateNaissance = Saisie.lire_String("Entrez la date de naissance :");
+        moyenne = Saisie.lire_double("Entrez la moyenne :");
     }
 
-    public void saisirEtudiant() {
-
+    @Override
+    public String toString() {
+        return "Etudiant{" +
+                "nom='" + nom + '\'' +
+                ", dateNaissance='" + dateNaissance + '\'' +
+                ", moyenne=" + moyenne +
+                '}';
     }
 
     public void afficher() {
