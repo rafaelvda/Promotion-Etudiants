@@ -43,7 +43,10 @@ public class Promotion {
     //}
 
     public void ajouterEtudiant(Etudiant unEtudiant) {
-        Promotion.add(unEtudiant);
+        if (nbEtudiant < 40){
+            Promotion.add(unEtudiant);
+            nbEtudiant ++;
+        }
     }
 
     public void calculMoyenneGeneral () {
